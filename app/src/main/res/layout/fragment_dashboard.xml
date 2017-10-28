@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/speedometerLayout">
+        <ru.sunnywolf.rudn.dashboard.BatAccelView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            app:indicatorWidth="80"
+            app:indicatorSize="120"
+            app:colorBack="@color/colorPrimary"
+            app:colorAccel="@color/colorAccent"
+            app:colorBatteryHSVLow="0"
+            app:colorBatteryHSVHigh="90"
+            app:colorBatteryHSVSaturation="0.7"
+            android:id="@+id/batAccelView" />
+
+        <TextView
+            android:id="@+id/textSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="56dp"
+            android:layout_centerInParent="true"
+            android:text="72"
+            android:textSize="100dp" />
+    </RelativeLayout>
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:max="100"
+        android:layout_below="@+id/speedometerLayout"
+        android:layout_alignStart="@+id/speedometerLayout"
+        android:layout_alignEnd="@+id/speedometerLayout" />
+</RelativeLayout>

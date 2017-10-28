@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BatAccelView">
+        <attr name="colorAccel" format="color"/>
+        <attr name="colorBattery" format="color"/>
+        <attr name="colorBack" format="color"/>
+        <attr name="colorBatteryHSVLow" format="float"/>
+        <attr name="colorBatteryHSVHigh" format="float"/>
+        <attr name="colorBatteryHSVSaturation" format="float"/>
+        <attr name="indicatorWidth" format="integer"/>
+        <attr name="indicatorSize" format="integer"/>
+    </declare-styleable>
+</resources>
