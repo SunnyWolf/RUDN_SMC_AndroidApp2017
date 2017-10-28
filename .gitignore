@@ -22,7 +22,9 @@ gen/
 *.iml
 .idea/
 .gradle/
+gradle/
 *.log
+*.gradle
 
 # Local configuration file (sdk path, etc)
 local.properties
