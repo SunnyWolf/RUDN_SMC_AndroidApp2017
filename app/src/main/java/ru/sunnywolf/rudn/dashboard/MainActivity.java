@@ -1,12 +1,11 @@
 package ru.sunnywolf.rudn.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -21,6 +20,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Intent intent = new Intent(this, ConnectionService.class);
+        intent.setAction("CONNECT");
+        intent.putExtra("DEVADDR", "30:14:11:17:12:22");
+        startService(intent);
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -82,8 +87,14 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
 
         switch (id){
-            case R.id.nav_camera:
+            case R.id.nav_dashboard:
                 fragment = new DashboardFragment();
+                break;
+            case R.id.nav_settings:
+                break;
+            case R.id.nav_connect:
+                break;
+            case R.id.nav_disconnect:
                 break;
         }
 

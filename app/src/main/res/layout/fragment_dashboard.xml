@@ -3,34 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+        <ImageView android:id="@+id/imageTLeft"
+            android:src="@drawable/ic_turn_left"
+            style="@style/Indicators"/>
+        <ImageView android:id="@+id/imageFan"
+            android:src="@drawable/ic_fan"
+            style="@style/Indicators"/>
+        <ImageView android:id="@+id/imageTRight"
+            android:src="@drawable/ic_turn_right"
+            style="@style/Indicators"/>
+    </LinearLayout>
     <RelativeLayout
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        android:id="@+id/speedometerLayout">
+        android:id="@+id/layout_speedometer"
+        android:layout_width="@dimen/speedometer_dimens"
+        android:layout_height="@dimen/speedometer_dimens"
+        android:layout_centerInParent="true">
         <ru.sunnywolf.rudn.dashboard.BatAccelView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             app:indicatorWidth="80"
-            app:indicatorSize="120"
+            app:indicatorSize="140"
             app:colorBack="@color/colorPrimary"
             app:colorAccel="@color/colorAccent"
             app:colorBatteryHSVLow="0"
             app:colorBatteryHSVHigh="90"
             app:colorBatteryHSVSaturation="0.7"
-            android:id="@+id/batAccelView" />
+            android:id="@+id/view_battery_and_acc" />
 
         <TextView
             android:id="@+id/textSpeed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="56dp"
             android:layout_centerInParent="true"
-            android:text="72"
-            android:textSize="100dp" />
+            android:text="0"
+            android:textSize="@dimen/speedometer_text_size" />
     </RelativeLayout>
 
     <SeekBar
@@ -39,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
         android:max="100"
-        android:layout_below="@+id/speedometerLayout"
-        android:layout_alignStart="@+id/speedometerLayout"
-        android:layout_alignEnd="@+id/speedometerLayout" />
+        android:layout_below="@+id/layout_speedometer"
+        android:layout_alignStart="@+id/layout_speedometer"
+        android:layout_alignEnd="@+id/layout_speedometer" />
 </RelativeLayout>
